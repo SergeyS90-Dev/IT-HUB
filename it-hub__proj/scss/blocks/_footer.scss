@@ -1,0 +1,253 @@
+.footer {
+  background-color: $color-blue-charcoa;
+  padding: 60px 0 38px;
+
+  @include vp-1023 {
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 760px;
+    gap: 50px;
+    margin: 0 0 40px 0;
+
+    @media (max-width: 1250px) {
+      grid-template-columns: 1fr auto;
+    }
+
+    @include vp-1023 {
+      gap: 30px;
+      grid-template-columns: 1fr 470px;
+    }
+
+    @include vp-767 {
+      gap: 40px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include vp-767 {
+      align-items: center;
+    }
+  }
+
+  &__logo-link {
+    color: $color-white;
+    margin: 0 0 40px;
+
+    &:focus-visible {
+      opacity: 1;
+      outline: 2px solid $color-fallow;
+      outline-offset: 5px;
+    }
+
+    @include vp-1023 {
+      margin: 0 0 35px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 26px;
+    }
+
+    svg {
+      height: 34px;
+      width: 149px;
+      pointer-events: none;
+
+      @include vp-1023 {
+        height: 24px;
+        width: 105px;
+      }
+
+      @include vp-767 {
+        height: 20px;
+        width: 88px;
+      }
+    }
+  }
+
+  &__logo-link {
+    &:hover {
+      svg {
+        animation: rotate 3s ease-in-out forwards;
+      }
+    }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+
+    30% {
+      transform: rotate(140deg) scale(1.15);
+    }
+
+    55% {
+      transform: rotate(220deg) scale(1.25);
+    }
+
+    75% {
+      transform: rotate(320deg) scale(0.95);
+    }
+
+    90% {
+      transform: rotate(350deg) scale(1.05);
+    }
+
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 40px;
+
+    @include vp-1023 {
+      gap: 11px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 26px;
+    color: $color-white;
+    display: flex;
+    transition: opacity $transition-300;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus-visible {
+      opacity: 1;
+      outline: 2px solid $color-fallow;
+      outline-offset: 5px;
+    }
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__phone {
+    position: relative;
+    color: $color-white;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.046em;
+    transition: opacity $transition-300;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      transform: scaleX(0);
+      transform-origin: left;
+      width: 100%;
+      height: 2px;
+      background-color: $color-white-50;
+      transition: transform $transition-300;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:focus-visible {
+      opacity: 1;
+      outline: 2px solid $color-fallow;
+      outline-offset: 5px;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    &:focus-visible::after {
+      transform: scaleX(0);
+    }
+
+    @include vp-1023 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.01em;
+    }
+
+    @include vp-767 {
+      line-height: 22px;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link-list {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px 120px;
+    justify-content: end;
+
+    @media (max-width: 1250px) {
+      gap: 20px 50px;
+      grid-template-columns: max-content max-content;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: repeat(2, 220px);
+      gap: 15px 30px;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+
+  &__link-item {
+    @include vp-767 {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+    color: $color-white-50;
+    font-size: 12px;
+    line-height: 16px;
+    user-select: none;
+
+    @include vp-1023 {
+      font-size: 10px;
+      line-height: 14px;
+      max-width: 470px;
+    }
+
+    @include vp-767 {
+      text-align: center;
+      max-width: unset;
+    }
+  }
+}

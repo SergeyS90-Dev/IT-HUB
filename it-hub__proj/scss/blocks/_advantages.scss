@@ -1,0 +1,131 @@
+.advantages {
+  padding: 60px 0;
+
+  @include vp-1023 {
+    padding: 40px 0;
+  }
+
+  @include vp-767 {
+    padding: 30px 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 168px;
+
+    @media (max-width: 1450px) {
+      grid-template-columns: 1fr 350px;
+      gap: 60px;
+    }
+
+    @include vp-1023 {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    @include vp-767 {
+      gap: 60px;
+    }
+  }
+
+  &__intro {
+    font-weight: 400;
+    align-self: center;
+    font-size: 18px;
+    line-height: 26px;
+    cursor: default;
+    color: $color-white;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__caption {
+    display: block;
+    margin: 0 0 30px;
+    letter-spacing: -0.01em;
+
+    @include vp-1023 {
+      margin: 0 0 20px;
+      letter-spacing: normal;
+    }
+
+    @include vp-767 {
+      margin: 0 0 15px;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 387px);
+    gap: 28px;
+
+    @media (max-width: 1450px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @include vp-1023 {
+      gap: 60px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .advantages__list {
+        &:nth-child(2) {
+          .advantages__list-item {
+            &:nth-child(2) {
+              max-width: 86%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0 0 0 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include vp-1023 {
+      gap: 10px;
+    }
+  }
+
+  &__list-item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      top: 10px;
+      left: 0;
+      transform: translateX(-16px);
+      border-radius: 50%;
+      background-color: $color-fallow;
+
+      @include vp-1023 {
+        top: 7px;
+        transform: translateX(-15px);
+      }
+    }
+  }
+
+  &__description {
+    margin: 0;
+  }
+}

@@ -1,0 +1,26 @@
+/* Global */
+/* ------------------------------------ */
+@import "global/_normalize";
+@import "global/_fonts";
+@import "global/_variables";
+@import "global/_mixins";
+@import "global/_reboot";
+@import "global/_container";
+@import "global/_visually-hidden";
+
+/* Blocks */
+/* ------------------------------------ */
+@import "blocks/_header";
+@import "blocks/_socials";
+@import "blocks/_footer";
+@import "blocks/_hero";
+@import "blocks/_city-park";
+@import "blocks/_embankment";
+@import "blocks/_advantages";
+@import "blocks/_yard-park";
+@import "blocks/_architecture";
+@import "blocks/_apartaments";
+@import "blocks/_reception";
+@import "blocks/_box";
+@import "blocks/content";
+@import "blocks/menu";
