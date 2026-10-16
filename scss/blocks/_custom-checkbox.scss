@@ -1,0 +1,120 @@
+.custom-checkbox {
+  position: relative;
+  $root: &;
+
+  @include vp-767 {
+    align-self: center;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    padding: 0 0 0 30px;
+    cursor: pointer;
+  }
+
+  &__label::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    transform: translateY(4%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-rustic-red;
+    transition: border-color $transition-300, background-color $transition-300;
+
+    @include vp-767 {
+      transform: translateY(-6%);
+    }
+
+  }
+
+  &__field:hover~#{$root}__label::before {
+    border-color: $color-white-50;
+  }
+
+  &__field:focus-visible+#{$root}__label::before {
+    outline: 2px solid $color-rustic-red;
+    outline-offset: 3px;
+  }
+
+  &__field:checked+#{$root}__label::before {
+    background-color: $color-white-50;
+    border-color: $color-white-50;
+  }
+
+  &__label::after {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 5px;
+    width: 10px;
+    height: 7px;
+    background-image: url("../images/sprite/ok.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity $transition-300;
+
+    @include vp-767 {
+      top: 6px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    top: 14px;
+  }
+
+  &__field:checked+#{$root}__label::after {
+    opacity: 1;
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    width: fit-content;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    outline: none;
+    color: $color-white;
+    transition: color $transition-300;;
+
+    @include vp-1023 {
+      font-size: 15px;
+      line-height: 19px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &:hover {
+      color: $color-rustic-red
+    }
+
+    &:focus-visible {
+      outline-offset: 1px;
+      outline: 2px solid $color-rustic-red;
+      text-decoration: none;
+      color: $color-black;
+    }
+
+  }
+
+}

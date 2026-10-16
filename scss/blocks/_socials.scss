@@ -5,7 +5,6 @@
   list-style: none;
   align-items: center;
   gap: 32px;
-  transition: color $transition-300;
 
   @include vp-1023 {
     gap: 20px;
@@ -20,7 +19,8 @@
     align-items: center;
     justify-content: center;
     color: $color-trout;
-    transition: color $transition-300;
+    transition: color $transition-300, opacity $transition-300;
+    outline: none;
 
     &:hover {
       color: $color-ecru-white;
@@ -29,6 +29,73 @@
     &:focus-visible {
       outline: 2px solid $color-fallow;
       outline-offset: 5px;
+    }
+
+    &--whatsapp {
+      &:hover {
+        color: $color-whatsapp;
+      }
+
+      &:focus-visible {
+        opacity: 0.6;
+        outline: none;
+      }
+    }
+
+    &--tg {
+      &:hover {
+        color: $color-tg;
+      }
+
+      &:focus-visible {
+        opacity: 0.6;
+        outline: none;
+      }
+    }
+
+    &--vk {
+      &:hover {
+        color: $color-vk;
+      }
+
+      &:focus-visible {
+        opacity: 0.6;
+        outline: none;
+      }
+    }
+
+    &--youtube {
+      &:hover {
+        color: $color-youtube;
+      }
+
+      &:focus-visible {
+        opacity: 0.6;
+        outline: none;
+      }
+    }
+
+    &--dzen {
+      &:hover {
+        color: $color-black;
+      }
+
+      &:focus-visible {
+        opacity: 0.6;
+        outline: none;
+      }
+    }
+
+    &--hh {
+      &:hover {
+        color: $color-hh;
+      }
+
+      &:focus-visible {
+        opacity: 0.6;
+        outline: none;
+      }
+
     }
   }
 }

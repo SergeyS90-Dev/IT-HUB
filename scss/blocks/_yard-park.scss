@@ -1,6 +1,5 @@
 .yard-park {
   padding: 60px 0;
-  $root: &;
 
   @include vp-1023 {
     padding: 40px 0;
@@ -11,6 +10,7 @@
   }
 
   &__content {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 500px;
     gap: 170px;
@@ -36,58 +36,119 @@
     }
   }
 
-  &__content-media {
-    position: relative;
-    cursor: pointer;
-  }
+  &__button {
+    &.btn--close {
+      display: none;
+      position: absolute;
+      top: 0px;
+      transform: translateY(-100%);
+      right: 45%;
+      opacity: 1;
+      z-index: 3;
 
-  &__content-media:has(.yard-park__descr:hover) {
-    #{$root}__image {
-      filter: none;
+      @media(max-width: 1450px) {
+        transform: translateY(-10%);
+        right: 51%;
+      }
+
+      @include vp-1023 {
+        transform: translateY(27%);
+        right: 52%;
+      }
+
+      @include vp-767 {
+        transform: translateY(100%);
+        right: 6%;
+      }
+
+      @media(max-width: 500px) {
+        transform: translateY(50%);
+        right: 2%;
+      }
     }
 
-    #{$root}__descr {
-      opacity: 0;
+  }
+
+  &__button--active {
+    &.btn--close {
+      display: flex;
     }
   }
+
 
   &__image {
+    position: relative;
+    z-index: 0;
     filter: blur(5px);
-    transition: filter $transition-300 0.2s;
+    transition: filter $transition-300, transform $transition-300, border $transition-300;
   }
 
-  &__descr {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 35%;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    font-size: 17px;
-    line-height: 22px;
-    text-transform: uppercase;
-    color: $color-white;
-    z-index: 3;
-    background-color: $color-black;
-    opacity: 1;
-    transition: opacity $transition-300;
+  &__image--open {
+    filter: blur(0);
+    border: 3px solid $color-fallow;
+    border-radius: 80px;
+    transform: translate(65px, -37px) scale(1.1);
+    z-index: 1;
 
-    @include vp-1023 {
-      font-size: 14px;
-      line-height: 20px;
+    @media(max-width: 1450px) {
+      transform: translate(20px, -15px) scale(1.09);
     }
 
     @include vp-767 {
+      transform: translate(0, -10px) scale(1.09);
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: 19%;
+
+    @media(max-width: 1650px) {
+      left: 18%;
+      transform: translateX(12%);
+    }
+
+    @media(max-width: 1250px) {
+      left: 17%;
+      transform: translateX(-2%);
+    }
+
+
+    @include vp-1023 {
+      top: 45%;
+    }
+
+    @include vp-767 {
+      top: 36%;
       left: 40%;
     }
 
-    @media (max-width: 450px) {
-      line-height: 17px;
-      padding: 12px;
-      left: 32%;
+    @media (max-width: 650px) {
+      top: 32%;
+      left: 34%;
+      padding: 12px 20px;
+    }
+
+    @media (max-width: 500px) {
+      top: 24%;
+    }
+
+  }
+
+  &__btn--active {
+    display: none;
+  }
+
+  .btn--alternative {
+    background-color: $color-fallow;
+
+    &:hover {
+      border-color: $color-fallow;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-fallow;
     }
   }
 

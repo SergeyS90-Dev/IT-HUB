@@ -1,0 +1,76 @@
+.custom-input {
+  position: relative;
+  max-width: 540px;
+  $root: &;
+
+  @include vp-767 {
+    width: 100%;
+  }
+
+  &__field {
+    width: 100%;
+    min-height: 56px;
+    padding: 18px 20px;
+    border: 1px solid $color-rustic-red;
+    border-radius: 5px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    outline: none;
+    transition: border-color $transition-300;
+  
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+
+  &__field:hover {
+    border-color: $color-white-50;
+  }
+
+  &__field:focus-visible {
+    border-color: $color-rustic-red;
+    outline: 2px solid $color-rustic-red;
+    outline-offset: 4px;
+  }
+
+  &:hover &__label {
+    color: $color-white-50;
+  }
+
+  &:has(#{$root}__field:focus-visible) #{$root}__label {
+    color: $color-rustic-red;
+  }
+
+  &__field::placeholder {
+    color: $color-white-50;
+    opacity: 1;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 3%;
+    transform: translateY(-56%);
+    padding: 0 5px;
+    pointer-events: none;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: $color-fallow;
+    color: $color-blue-charcoa;
+    transition: color $transition-300;
+
+    @include vp-1023 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+}

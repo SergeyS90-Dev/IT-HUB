@@ -1,0 +1,73 @@
+  .form-result {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: space-between;
+
+    @media(max-width: 1650px) {
+      gap: 20px;
+    }
+
+    &__caption {
+      margin: 0;
+      color: $color-rustic-red;
+      text-align: center;
+      font-size: 26px;
+      line-height: 30px;
+      font-weight: 600;
+
+      @media(max-width: 1650px) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+
+      @include vp-1023 {
+        font-size: 22px;
+        line-height: 26px;
+      }
+    }
+
+    &__text {
+      margin: 0;
+      color: $color-rustic-red;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+      text-align: center;
+
+      @include vp-1023 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+
+    &__list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      font-size: 26px;
+      line-height: 26px;
+
+      @media(max-width: 1650px) {
+        gap: 25px;
+        margin: auto 0 0;
+        font-size: 22px;
+        line-height: 24px;
+      }
+
+      @include vp-1023 {
+        font-size: 18px;
+        line-height: 22px;
+        gap: 20px;
+      }
+    }
+
+    &--active {
+      display: flex;
+    }
+
+  }
