@@ -20,11 +20,89 @@
     <div class="container container--wide">
       <div class="header__content">
         <div class="header__left-col">
-          <button class="header__menu" type="button" aria-label="Переключатель меню">
-            <svg class="header__menu-icon" width="60" height="23" aria-hidden="true">
-              <use xlink:href="images/sprite.svg#icon-menu"></use>
-            </svg>
-          </button>
+            <button class="burger" type="button" aria-label="Переключатель меню" aria-expanded="false"
+              aria-controls="site-menu">
+              <svg class="burger__icon" width="60" height="23" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-menu"></use>
+              </svg>
+            </button>
+            <nav class="menu" id="site-menu">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a class="menu__link" href="#advantages" aria-label="Наши преимущества">
+                    Преимущества
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#yard-park" aria-label="Придомовая территория">
+                    Двор-парк
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#architecture" aria-label="Архитектура проекта Sminex">
+                    Архитектура
+                  </a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#apartaments" aria-label="Выбор апартаментов">
+                    Апартаменты
+                  </a>
+                </li>
+              </ul>
+              <aside class="menu__socials">
+                <ul class="socials">
+                  <li class="socials__item">
+                    <a class="socials__link socials__link--whatsapp" href="https://wa.me/79259124495"
+                      aria-label="Ссылка на whatsapp">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-whatsapp"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a class="socials__link socials__link--tg" href="https://t.me/SERG_WEB3"
+                      aria-label="Ссылка на Телеграм">
+                      <svg width="22" height="18" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-tg"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a class="socials__link socials__link--vk" href="#" aria-label="Ссылка на ВКонтакте">
+                      <svg width="24" height="14" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a class="socials__link socials__link--youtube" href="#" aria-label="Ссылка на youtube">
+                      <svg width="22" height="16" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-youtube"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a class="socials__link socials__link--dzen" href="#" aria-label="Ссылка на Дзен">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-dzen"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="socials__item">
+                    <a class="socials__link socials__link--hh" href="#" aria-label="Ссылка на HH">
+                      <svg width="20" height="20" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-hh"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+              <button class="menu__btn btn btn--close" type="button" aria-label="закрыть меню">
+                <svg class="menu__icon btn__icon" width="21" height="21" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#cross"></use>
+                </svg>
+              </button>
+            </nav>
           <a class="header__logo-link" href="#" aria-label="Главная страница">
             <svg class="header__logo" width="114" height="26" aria-hidden="true">
               <use xlink:href="images/sprite.svg#icon-header-logo"></use>
@@ -64,7 +142,7 @@
             <source media="(max-width: 1024px)"
               srcset="images/about-images/hero-tablet.jpg 1x, images/about-images/hero-tablet@2x.jpg 2x">
             <img class="hero__image" src="images/about-images/hero-desktop.jpg"
-              srcset="images/about-images/hero-desktop@2x.jpg 2x" width="1728" height="740" loading="eager"
+              srcset="images/about-images/hero-desktop@2x.jpg 2x" width="600" height="600" loading="eager"
               fetchpriority="high" decoding="async" alt="Фото элитного клубного дома в Москве">
           </picture>
           <h1 class="hero__header">
@@ -76,30 +154,6 @@
     <section class="city-park">
       <div class="container">
         <div class="city-park__inner">
-          <nav class="menu">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a class="menu__link" href="#advantages" aria-label="Наши преимущества">
-                  Преимущества
-                </a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#yard-park" aria-label="Придомовая территория">
-                  Двор-парк
-                </a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#architecture" aria-label="Архитектура проекта Sminex">
-                  Архитектура
-                </a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#apartaments" aria-label="Выбор апартаментов">
-                  Апартаменты
-                </a>
-              </li>
-            </ul>
-          </nav>
           <ul class="city-park__list">
             <li class="city-park__list-item">
               <div class="box">
@@ -327,26 +381,29 @@
     <section class="yard-park">
       <div class="container">
         <div class="yard-park__content" id="yard-park">
-          <div class="yard-park__content-media">
-            <picture>
-              <source type="image/webp" media="(max-width: 767px)"
-                srcset="images/about-images/yard-park-mobile.webp 1x, images/about-images/yard-park-mobile.webp 2x">
-              <source type="image/webp" media="(max-width: 1023px)"
-                srcset="images/about-images/yard-park-tablet.webp 1x, images/about-images/yard-park-tablet@2x.webp 2x">
-              <source type="image/webp"
-                srcset="images/about-images/yard-park-desktop.webp 1x, images/about-images/yard-park-desktop@2x.webp 2x">
-              <source media="(max-width: 767px)"
-                srcset="images/about-images/yard-park-mobile.jpg 1x, images/about-images/yard-park-mobile@2x.jpg 2x">
-              <source media="(max-width: 1024px)"
-                srcset="images/about-images/yard-park-tablet.jpg 1x, images/about-images/yard-park-tablet@2x.jpg 2x">
-              <img class="yard-park__image" src="images/about-images/yard-park-desktop.jpg"
-                srcset="images/about-images/yard-park-desktop@2x.jpg 2x" width="700" height="700"
-                alt="Картинка элитного двора-парка">
-            </picture>
-            <span class="yard-park__descr">
-              Посмотреть
-            </span>
-          </div>
+          <button class="yard-park__button btn btn--close" type="button" aria-label="Закрыть картинку">
+            <svg class="btn__icon" width="21" height="21" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)"
+              srcset="images/about-images/yard-park-mobile.webp 1x, images/about-images/yard-park-mobile.webp 2x">
+            <source type="image/webp" media="(max-width: 1023px)"
+              srcset="images/about-images/yard-park-tablet.webp 1x, images/about-images/yard-park-tablet@2x.webp 2x">
+            <source type="image/webp"
+              srcset="images/about-images/yard-park-desktop.webp 1x, images/about-images/yard-park-desktop@2x.webp 2x">
+            <source media="(max-width: 767px)"
+              srcset="images/about-images/yard-park-mobile.jpg 1x, images/about-images/yard-park-mobile@2x.jpg 2x">
+            <source media="(max-width: 1024px)"
+              srcset="images/about-images/yard-park-tablet.jpg 1x, images/about-images/yard-park-tablet@2x.jpg 2x">
+            <img class="yard-park__image" src="images/about-images/yard-park-desktop.jpg"
+              srcset="images/about-images/yard-park-desktop@2x.jpg 2x" width="700" height="700"
+              alt="Картинка элитного двора-парка">
+          </picture>
+          <button class="yard-park__btn btn btn--alternative" type="button">
+            Посмотреть
+          </button>
           <div class="yard-park__content-wrap">
             <h2 class="yard-park__caption">
               самый большой в&nbsp;элитном сегменте двор-парк 3,1&nbsp;га
@@ -376,7 +433,6 @@
           <svg class="yard-park__arrow" width="16" height="16" aria-hidden="true">
             <use xlink:href="images/sprite.svg#arrow-right"></use>
           </svg>
-
           <div class="yard-park__box">
             <div class="yard-park__holder">
               <span class="yard-park__number">
@@ -488,7 +544,7 @@
               Редкие форматы: квартиры с&nbsp;потолками 7&nbsp;метров и&nbsp;антресолями, флетхаусы и&nbsp;двухэтажные
               ситихаусы, пентхаусы с&nbsp;бассейном, виллы с&nbsp;частным патио.
             </p>
-            <button class="apartaments__btn" type="button">
+            <button class="apartaments__btn btn btn--ok" type="button">
               Оставить заявку
             </button>
           </div>
@@ -525,6 +581,125 @@
           </ul>
         </div>
       </div>
+      <div class="form-modal" role="dialog" aria-modal="true" aria-labelledby="application-title">
+        <h2 class="form-modal__header visually-hidden" id="application-title">
+          Оставить заявку на консультацию
+        </h2>
+        <form class="form" action="#" method="post" aria-live="polite">
+          <button class="form__button btn btn--close" type="button" aria-label="закрыть заявку">
+            <svg class="btn__icon" width="21" height="21" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#cross"></use>
+            </svg>
+          </button>
+
+          <fieldset class="form__fieldset form__fieldset--info">
+            <div class="custom-input">
+              <input class="custom-input__field" type="text" id="family" placeholder="Соколов" required>
+              <label class="custom-input__label" for="family">
+                Фамилия*
+              </label>
+            </div>
+            <div class="custom-input">
+              <input class="custom-input__field" type="text" id="name" placeholder="Сергей" required>
+              <label class="custom-input__label" for="name">
+                Имя*
+              </label>
+            </div>
+            <div class="custom-input">
+              <input class="custom-input__field" type="tel" id="phone" placeholder="+7-(___)- ___- __- __" required>
+              <label class="custom-input__label" for="phone">
+                Телефон*
+              </label>
+            </div>
+            <div class="custom-input">
+              <input class="custom-input__field" type="email" id="mail" placeholder="sokolovsm23@st.ithub.ru" required>
+              <label class="custom-input__label" for="mail">
+                Почта*
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="form__fieldset" id="text">
+            <div class="custom-textarea">
+              <label class="custom-textarea__label" for="description">
+                Дополнительная информация
+              </label>
+              <textarea class="custom-textarea__field" id="description"
+                placeholder="Напишите, если у&nbsp;Вас есть особые пожелания"></textarea>
+            </div>
+          </fieldset>
+          <fieldset class="form__fieldset form__fieldset--radio" id="radiobutton">
+            <legend class="form__legend" id="consultation">
+              Формат консультации
+            </legend>
+            <div class="form__radio-group">
+              <div class="custom-radio">
+                <input class="custom-radio__field visually-hidden" id="ofline" type="radio" name="sminex" value="очно"
+                  required>
+                <label class="custom-radio__label" for="ofline">
+                  <span class="custom-radio__name">Очно</span>
+                </label>
+              </div>
+              <div class="custom-radio">
+                <input class="custom-radio__field visually-hidden" id="online" type="radio" name="sminex"
+                  value="онлайн">
+                <label class="custom-radio__label" for="online">
+                  <span class="custom-radio__name">Онлайн</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset class="form__fieldset">
+            <div class="custom-checkbox">
+              <input class="custom-checkbox__field visually-hidden" type="checkbox" name="agree" id="agree" required>
+              <label class="custom-checkbox__label" for="agree">
+                <span class="custom-checkbox__descr">
+                  Я&nbsp;согласен(а) на&nbsp;обработку персональных данных
+                  <a class="custom-checkbox__link" href="#">
+                    Политика конфиденциальности
+                  </a>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <button class="form__btn btn btn--alternative" type="submit">
+            Отправить
+          </button>
+        </form>
+        <div class="form-result">
+          <h3 class="form-result__caption">
+            Ваша заявка принята
+          </h3>
+          <p class="form-result__text">
+            Наш специалист свяжется с&nbsp;вами в&nbsp;течение часа.
+          </p>
+          <ul class="form-result__list">
+            <li class="form-result__item">
+              <span class="form-result__label">Фамилия:</span>
+              <span class="form-result__value" data-result="family"></span>
+            </li>
+            <li class="form-result__item">
+              <span class="form-result__label">Имя:</span>
+              <span class="form-result__value" data-result="name"></span>
+            </li>
+            <li class="form-result__item">
+              <span class="form-result__label">Телефон:</span>
+              <span class="form-result__value" data-result="phone"></span>
+            </li>
+            <li class="form-result__item">
+              <span class="form-result__label">Почта:</span>
+              <span class="form-result__value" data-result="mail"></span>
+            </li>
+            <li class="form-result__item">
+              <span class="form-result__label">Дополнительная информация:</span>
+              <span class="form-result__value" data-result="description"></span>
+            </li>
+            <li class="form-result__item">
+              <span class="form-result__label">Консультация:</span>
+              <span class="form-result__value" data-result="consultation"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section class="reception">
       <h2 class="visually-hidden">
@@ -546,6 +721,7 @@
           alt="Ресепшен sminex">
       </picture>
     </section>
+    <script src="index.js"></script>
   </main>
   <footer class="footer">
     <div class="container container--wide">
@@ -567,14 +743,14 @@
           </div>
           <ul class="footer__social socials">
             <li class="socials__item">
-              <a class="socials__link" href="#" aria-label="Ссылка на whatsapp">
+              <a class="socials__link" href="https://wa.me/79259124495" aria-label="Ссылка на whatsapp">
                 <svg width="20" height="20" aria-hidden="true">
                   <use xlink:href="images/sprite.svg#icon-whatsapp"></use>
                 </svg>
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="#" aria-label="Ссылка на Телеграм">
+              <a class="socials__link" href="https://t.me/SERG_WEB3" aria-label="Ссылка на Телеграм">
                 <svg width="22" height="18" aria-hidden="true">
                   <use xlink:href="images/sprite.svg#icon-tg"></use>
                 </svg>

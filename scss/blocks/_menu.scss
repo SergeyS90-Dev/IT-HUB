@@ -1,76 +1,111 @@
 .menu {
-  padding: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 0 0 20px 20px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 35px;
+  min-height: 500px;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  background-color: $color-white-50;
+  box-shadow: 0 0 10px 0 $color-rustic-red;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.96);
+  transform-origin: left top;
+
+  transition: transform $transition-300, opacity $transition-300, visibility $transition-300;
+
+  @media (max-width: 1450px) {
+    top: 110%;
+    max-width: 400px;
+    min-height: 450px;
+    padding: 45px 20px 25px;
+  }
+
+  @include vp-1023 {
+    top: 106%;
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-width: 500px;
+    min-height: auto;
+    gap: 25px;
+    border-radius: 35px;
+    padding: 45px 20px 25px;
+  }
 
   @include vp-767 {
-    display: none;
+    max-width: none;
+    padding: 40px 15px 20px;
+    gap: 20px;
+
+    
+  }
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(4%) scale(1);
+    transition: transform $transition-300, opacity $transition-300, visibility $transition-300;
+
+
+    @include vp-1023 {
+      transform: translateY(7%);
+    }
+
+    @include vp-767 {
+      transform: translateY(9%);
+    }
   }
 
   &__list {
-    counter-reset: menu-list 0;
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    gap: 35px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.35em;
+    letter-spacing: 0.1em;
+
+    @include vp-1023 {
+      font-size: 16px;
+      line-height: 1.25em;
+      gap: 20px;
+    }
+
+    @include vp-767 {
+      gap: 10px;
+    }
   }
 
   &__link {
     position: relative;
-    counter-increment: menu-list 1;
-    display: inline-block;
-    padding: 4px 4px 4px 20px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
-    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: $color-fallow;
+    color: $color-rustic-red;
     outline: none;
     transition: opacity $transition-300;
 
-    @media (max-width: 1320px) {
-      line-height: 22px;
-    }
-
     &:hover {
       opacity: 0.7;
-
-      &::before {
-        opacity: 0.7;
-      }
     }
 
     &:focus-visible {
       opacity: 1;
       outline: 2px solid $color-fallow;
       outline-offset: 5px;
-
-      &::before {
-        opacity: 1;
-      }
-    }
-
-    &::before {
-      content: counter(menu-list) ".";
-      position: absolute;
-      left: 0;
-      top: 0;
-      transform: translateY(2px);
-      font-size: 20px;
-      line-height: 26px;
-      color: currentColor;
-      transition: opacity $transition-300;
-
-      @media (max-width: 1320px) {
-        line-height: 24px;
-      }
-
-      @include vp-1023 {
-        top: 1px;
-      }
     }
 
     &::after {
@@ -82,7 +117,7 @@
       transform-origin: left;
       width: 100%;
       height: 3px;
-      background-color: currentColor;
+      background-color: $color-fallow;
       transition: transform $transition-300;
     }
 
@@ -94,5 +129,22 @@
     &:focus-visible::after {
       transform: scaleX(0);
     }
+  }
+
+  & .socials {
+    @include vp-767 {
+      gap: 15px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 6%;
+    left: 80%;
+
+    @include vp-1023 {
+      transform: translateX(17%);
+    }
+
   }
 }

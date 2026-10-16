@@ -1,0 +1,75 @@
+ .custom-textarea {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+
+   @include vp-767 {
+     align-items: center;
+   }
+
+   &__label {
+     position: absolute;
+     top: 0%;
+     left: 2%;
+     transform: translateY(-57%);
+     padding: 0 5px;
+     font-size: 18px;
+     line-height: 24px;
+     color: $color-blue-charcoa;
+     background-color: $color-fallow;
+     transition: color $transition-300;
+
+     @include vp-1023 {
+       font-size: 16px;
+       line-height: 20px;
+     }
+
+     @include vp-767 {
+       left: 13%;
+       font-size: 14px;
+       line-height: 18px;
+     }
+   }
+
+   &__field {
+     border: 1px solid $color-rustic-red;
+     border-radius: 5px;
+     width: 100%;
+     min-height: 120px;
+     flex-grow: 1;
+     background-color: transparent;
+     font-family: inherit;
+     padding: 16px;
+     font-size: 16px;
+     line-height: 20px;
+     outline: none;
+     resize: vertical;
+     transition: border-color $transition-300;
+
+     @include vp-767 {
+       max-width: 540px;
+     }
+   }
+
+   &:hover &__field {
+     border-color: $color-white-50;
+   }
+
+   &:hover &__label {
+     color: $color-white-50;
+   }
+
+   &__field:focus-visible {
+     border-color: $color-rustic-red;
+     outline: 2px solid $color-rustic-red;
+     outline-offset: 4px;
+   }
+
+   &:has(&__field:focus-visible) &__label {
+     color: $color-rustic-red;
+   }
+
+   &__field::placeholder {
+     color: $color-white-50;
+   }
+ }

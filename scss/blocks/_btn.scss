@@ -1,0 +1,106 @@
+  .btn {
+    border: 1px solid $color-fallow ;
+    color: $color-fallow;
+    cursor: pointer;
+
+
+    &--ok {
+      margin: 0;
+      outline: none;
+      padding: 16px 40px;
+      border: 1px solid $color-fallow ;
+      border-radius: 0 40px 0 40px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      background-color: transparent;
+      color: $color-fallow;
+      cursor: pointer;
+      transition: background-color $transition-300, color $transition-300, transform $transition-300 0.5s, border-color $transition-300;
+
+      @include vp-1023 {
+        display: block;
+        margin: 0 auto;
+        padding: 14px 36px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &:hover {
+        border-color: $color-blue-charcoa;
+        color: $color-black;
+        background-color: $color-fallow;
+        transform: scale(1.2);
+      }
+
+      &:focus-visible {
+        border-radius: 40px 0 40px 0;
+        outline: 2px solid $color-fallow;
+        outline-offset: 5px;
+      }
+    }
+
+    &--alternative {
+      border: 2px solid $color-rustic-red ;
+      border-radius: 40px 0 40px 0;
+      padding: 16px 40px;
+      align-self: center;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 400;
+      background-color: transparent;
+      color: $color-rustic-red;
+      outline: none;
+      transition: background-color $transition-300, color $transition-300, transform $transition-300 0.5s, border-color $transition-300;
+
+      @include vp-1023 {
+        padding: 14px 20px;
+      }
+
+
+      &:hover {
+        border-color: $color-white-50;
+        color: $color-fallow;
+        background-color: $color-rustic-red;
+        transform: scale(1.2);
+      }
+
+      &:focus-visible {
+        border-radius: 40px 0 40px 0;
+        outline: 2px solid $color-rustic-red;
+        outline-offset: 5px;
+      }
+    }
+
+    &--close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border: 1px solid $color-fallow; //1
+      border-radius: 50%;
+      color: $color-fallow; //2
+      background-color: $color-rustic-red;
+      cursor: pointer; //3
+      opacity: 0.5;
+      outline: none;
+      transition: opacity $transition-300, background-color $transition-300, color $transition-300;
+
+      @include vp-1023 {
+        width: 30px;
+        height: 30px;
+      }
+
+      &:hover {
+        opacity: 1;
+        color: $color-rustic-red;
+        background-color: $color-fallow;
+      }
+
+      &:focus-visible {
+        opacity: 1;
+        outline: 2px solid $color-fallow;
+      }
+    }
+  }

@@ -1,0 +1,50 @@
+.burger {
+  display: flex;                              
+  margin: 0;
+  width: 60px;
+  height: 40px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: $color-blue-charcoa;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  // outline: none;
+  transition: color $transition-300;
+
+
+  @include vp-1023 {
+    width: 47px;
+    height: 20px;
+  }
+
+  @include vp-767 {
+    margin: 0 69px 0 0;
+  }
+
+  &:hover {
+    color: $color-fallow;
+  }
+
+  &:focus-visible {
+    // opacity: 1;
+    outline: 2px solid $color-fallow;
+    outline-offset: 5px;
+  }
+
+  svg {
+    height: 23px;
+    width: 60px;
+
+    @include vp-1023 {
+      height: 18px;
+      width: 47px;
+    }
+  }
+
+  &--active {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

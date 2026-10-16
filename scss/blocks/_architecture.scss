@@ -4,7 +4,7 @@
   @include vp-1023 {
     padding: 40px 0;
   }
-  
+
   @include vp-767 {
     padding: 32px 0;
   }
@@ -58,8 +58,8 @@
     font-size: 18px;
     line-height: 26px;
 
-    @media (max-width: 1215px) {
-      max-width: 320px;
+    @media (max-width: 1450px) {
+      max-width: 350px;
     }
 
     @include vp-1023 {
@@ -82,11 +82,11 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 84px;
 
-    @media (max-width: 1415px) {
+    @media (max-width: 1450px) {
       gap: 78px;
     }
 
-    @media (max-width: 1215px) {
+    @media (max-width: 1250px) {
       gap: 30px;
     }
 
